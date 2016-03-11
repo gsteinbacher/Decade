@@ -11,7 +11,7 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Clone_WhenCalled_ExpectedCloneToBeDifferentType()
         {
             // Arrange
-            Card expected = new Card(CardValueType.Ace, SuitType.Club);
+            Card expected = new Card(RankType.Ace, SuitType.Club);
 
             // Act
             var actual = expected.Clone();
@@ -24,7 +24,7 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Clone_WhenCalled_ExpectedCloneToEqual()
         {
             // Arrange
-            Card expected = new Card(CardValueType.Ace, SuitType.Club);
+            Card expected = new Card(RankType.Ace, SuitType.Club);
 
             // Act
             object actual = expected.Clone();
@@ -37,8 +37,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void GetHashCode_WhenCardsEqual_ExpectedHashCodesToEqual()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ace, SuitType.Club);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ace, SuitType.Club);
 
             // Act
             var actual = cardOne.GetHashCode() == cardTwo.GetHashCode();
@@ -51,8 +51,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void GetHashCode_WhenCardsNotEqual_ExpectedHashCodesToNotEqual()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ten, SuitType.Club);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ten, SuitType.Club);
 
             // Act
             var actual = cardOne.GetHashCode() == cardTwo.GetHashCode();
@@ -66,7 +66,7 @@ namespace Obacher.CardGame.Core.UnitTest
         {
             // Arrange
             var expected = DateTime.Now;
-            Card card = new Card(CardValueType.Ace, SuitType.Club);
+            Card card = new Card(RankType.Ace, SuitType.Club);
 
             // Act
             bool actual = card.Equals(expected);
@@ -79,8 +79,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Equals_WhenCardValueIsDifferent_ExpectedEqualToReturnFalse()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ten, SuitType.Club);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ten, SuitType.Club);
 
             // Act
             bool actual = cardOne.Equals(cardTwo);
@@ -93,8 +93,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Equals_WhenSuitIsDifferent_ExpectedEqualToReturnFalse()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ace, SuitType.Diamond);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ace, SuitType.Diamond);
 
             // Act
             bool actual = cardOne.Equals(cardTwo);
@@ -107,8 +107,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Card_WhenEqualsUsed_ExpectedTrue()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ace, SuitType.Club);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ace, SuitType.Club);
 
             // Act
             var actual = cardOne == cardTwo;
@@ -121,8 +121,8 @@ namespace Obacher.CardGame.Core.UnitTest
         public void Card_WhenNotEqualsUsed_ExpectedTrue()
         {
             // Arrange
-            Card cardOne = new Card(CardValueType.Ace, SuitType.Club);
-            Card cardTwo = new Card(CardValueType.Ace, SuitType.Diamond);
+            Card cardOne = new Card(RankType.Ace, SuitType.Club);
+            Card cardTwo = new Card(RankType.Ace, SuitType.Diamond);
 
             // Act
             var actual = cardOne != cardTwo;
@@ -136,7 +136,7 @@ namespace Obacher.CardGame.Core.UnitTest
         {
             // Arrange
             const string expected = "Ace:Heart";
-            Card card = new Card(CardValueType.Ace, SuitType.Heart);
+            Card card = new Card(RankType.Ace, SuitType.Heart);
 
             // Act
             var actual = card.ToString();

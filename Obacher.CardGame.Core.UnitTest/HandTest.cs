@@ -25,7 +25,7 @@ namespace Obacher.CardGame.Core.UnitTest
         public void GetEnumerator_WhenCalled_ExpectEnumerator()
         {
             // Arrange
-            var expected = new Card(CardValueType.Ace, SuitType.Club);
+            var expected = new Card(RankType.Ace, SuitType.Club);
             Hand hand = new Hand(
                 expected
              );
@@ -41,7 +41,7 @@ namespace Obacher.CardGame.Core.UnitTest
         public void GetEnumerator_WhenIEnumerabled_ExpectedExpectEnumerator()
         {
             // Arrange
-            var expected = new Card(CardValueType.Ace, SuitType.Club);
+            var expected = new Card(RankType.Ace, SuitType.Club);
             var hand = new Hand(
                 expected
              ).As<IEnumerable>();

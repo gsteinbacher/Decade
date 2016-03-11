@@ -1,6 +1,6 @@
 ﻿namespace Obacher.CardGame.Core
 {
-    public enum CardValueType
+    public enum RankType
     {
         Two,
         Three,
